@@ -1,0 +1,28 @@
+{
+    "theme_color": "#fff",
+    "background_color": "#fff",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name":  "Kur'an-ı Kerim Meali",
+    "orientation": "portrait-primary",
+    "short_name": "Kur'an-ı Kerim Meali",
+    "description": "Kur'an-ı Kerim Türkçe Meali",
+    "icons": [
+      {
+        "src": "/images/192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/images/256x256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      },
+      {
+        "src": "/images/512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
