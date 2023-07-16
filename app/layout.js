@@ -7,10 +7,13 @@ import store from "./redux/configureStore";
 import "./globals.css";
 import { Slide, ToastContainer } from "react-toastify";
 import { Provider, useSelector } from "react-redux";
+import Container from "./components/Container";
+import FloatingContainer from "./components/FloatingContainer";
 
 export default function RootLayout({ children }) {
   useEffect(() => {
     window.addEventListener("scroll", () => {
+      /*
       if (window.scrollY > window.innerHeight / 3) {
         document.getElementById("scrolltotop").style.display = "flex";
       } else {
@@ -22,6 +25,7 @@ export default function RootLayout({ children }) {
       } else {
         document.getElementById("overlay_top").style.display = "none";
       }
+      */
     });
   }, []);
 
@@ -46,7 +50,7 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <meta name="theme-color" content={"#283618"} id="theme-color-meta" />
         <link rel="manifest" href="/manifest.json" />
-        <body>
+        <body className="w-full mx-auto">
           <ToastContainer
             position="top-center"
             transition={Slide}
@@ -62,16 +66,18 @@ export default function RootLayout({ children }) {
           />
 
           <AnimatePresence>
-            <motion.div
-              className=""
-              initial="initialState"
-              animate="animateState"
-              exit="exitState"
-              variants={transitionVariants}
-            >
-              <Navbar />
-              {children}
-            </motion.div>
+            <Container>
+              <motion.div
+                initial="initialState"
+                animate="animateState"
+                exit="exitState"
+                variants={transitionVariants}
+              >
+                <Navbar />
+                {children}
+                <FloatingContainer />
+              </motion.div>
+            </Container>
           </AnimatePresence>
         </body>
       </html>

@@ -58,21 +58,30 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full max-w-[1200px] flex flex-row items-center justify-between p-[10px]">
+    <nav className="w-full max-w-[1200px] h-[80px] flex flex-row items-center justify-between  md:py-[1.6vw] md:px-[6vw] p-[10px]  mx-auto relative">
       <ul>
         <li>
           <Link href="/">
-            <AiFillHome />
+            <AiFillHome className="w-[20px] h-[20px]" />
           </Link>
         </li>
       </ul>
 
-      <Link href="/" className="w-[120px] h-[120px] bg-red-400"></Link>
+      <Link
+        href="/"
+        className="w-[100px] h-[100px] absolute -top-[40px] left-1/2 -translate-x-1/2 "
+      >
+        <img src="/logo.svg" alt="logo" className="w-[100px] h-[100px]" />
+      </Link>
 
-      <ul className="flex flex-row items-center justify-center gap-4">
+      <ul className="flex flex-row items-center justify-center gap-[12px]">
         <li>
           <a onClick={handleTheme}>
-            {theme === "dark" ? <MdSunny /> : <MdDarkMode />}
+            {theme === "dark" ? (
+              <MdSunny className="w-[20px] h-[20px]" />
+            ) : (
+              <MdDarkMode className="w-[20px] h-[20px]" />
+            )}
           </a>
         </li>
         <li>
@@ -82,13 +91,13 @@ const Navbar = () => {
               dispatch(setNavigatedFromPin(true));
             }}
           >
-            <BiSolidPin />
+            <BiSolidPin className="w-[20px] h-[20px]" />
           </Link>
         </li>
 
         <li>
           <Link href="/settings">
-            <IoMdSettings />
+            <IoMdSettings className="w-[20px] h-[20px]" />
           </Link>
         </li>
       </ul>
