@@ -266,7 +266,13 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                       );
                     }}
                   >
-                    <BiCopyAlt className=" fill-blue_soft dark:fill-blue_white group-hover:fill-[#ffffff] dark:group-hover:fill-blue_soft " />
+                    <BiCopyAlt
+                      className={
+                        isActive
+                          ? "fill-blue_white dark:fill-blue_soft group-hover:fill-blue_soft dark:group-hover:fill-[#ffffff]"
+                          : "fill-blue_soft dark:fill-blue_white group-hover:fill-[#ffffff] dark:group-hover:fill-blue_soft"
+                      }
+                    />
                   </motion.div>
                 </div>
               </div>
@@ -288,7 +294,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
           >
             <svg
               aria-hidden="true"
-              class="inline w-12 h-12 mr-2 text-blue_soft_border animate-spin dark:text-blue_white_border fill-blue_soft dark:fill-blue_white"
+              className="inline w-12 h-12 mr-2 text-blue_soft_border animate-spin dark:text-blue_white_border fill-blue_soft dark:fill-blue_white"
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -302,7 +308,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                 fill="currentFill"
               />
             </svg>
-            <span class="sr-only">Loading...</span>
+            <span className="sr-only">Loading...</span>
           </div>
         )}
       </div>

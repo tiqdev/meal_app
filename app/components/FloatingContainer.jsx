@@ -49,11 +49,11 @@ const FloatingContainer = () => {
     if (localStorage.getItem("theme") === "dark") {
       document.querySelector("body").classList.add("dark");
       dispatch(setTheme("dark"));
-      updateThemeColor("#283618");
+      updateThemeColor("#008080");
     } else {
       document.querySelector("body").classList.remove("dark");
       dispatch(setTheme("light"));
-      updateThemeColor("#fefae0");
+      updateThemeColor("#ecfdf5");
     }
 
     if (localStorage.getItem("lastVerse") !== "") {
@@ -116,7 +116,7 @@ const FloatingContainer = () => {
               </div>
             </FloatingButton>
 
-            <FloatingButton link={"/"}>
+            <FloatingButton link={"/settings"}>
               <IoMdSettings className="fill-blue_soft" />
             </FloatingButton>
 

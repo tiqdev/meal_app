@@ -58,7 +58,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full max-w-[1200px] h-[80px] flex flex-row items-center justify-between  md:py-[1.6vw] md:px-[6vw] p-[10px]  mx-auto relative">
+    <nav className="w-full max-w-[1200px] h-[80px] flex flex-row items-center justify-between  p-[10px]  mx-auto relative">
       <ul>
         <li>
           <Link href="/">

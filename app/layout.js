@@ -47,8 +47,8 @@ export default function RootLayout({ children }) {
 
   return (
     <Provider store={store}>
-      <html lang="en">
-        <meta name="theme-color" content={"#283618"} id="theme-color-meta" />
+      <html lang="tr">
+        <meta name="theme-color" content={"#008080"} id="theme-color-meta" />
         <link rel="manifest" href="/manifest.json" />
         <body className="w-full mx-auto">
           <ToastContainer
