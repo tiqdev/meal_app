@@ -23,6 +23,14 @@
     @apply flex items-center justify-center w-[20px] h-[20px] rounded-[50%] bg-blue_soft text-blue_white dark:bg-blue_white dark:text-blue_soft  text-[0.62rem] font-[700]
   }
 
+  .not_found{
+    @apply flex flex-col items-center justify-center w-full h-[200px] text-[1.2rem] font-[700] text-center text-blue_soft dark:text-blue_white
+  }
+
+  .surah_item{
+    @apply flex flex-row justify-between items-center p-[10px] py-[20px] border-solid border-b-[1px] border-blue_soft_border dark:border-blue_white_border
+  }
+
 }
 
 /* Satoshi */

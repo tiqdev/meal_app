@@ -71,7 +71,11 @@ const Navbar = () => {
         href="/"
         className="w-[100px] h-[100px] absolute -top-[40px] left-1/2 -translate-x-1/2 "
       >
-        <img src="/logo.svg" alt="logo" className="w-[100px] h-[100px]" />
+        <img
+          src="/logo.svg"
+          alt="logo"
+          className="w-[100px] h-[100px] drop-shadow-md"
+        />
       </Link>
 
       <ul className="flex flex-row items-center justify-center gap-[12px]">
