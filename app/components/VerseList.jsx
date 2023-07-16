@@ -23,6 +23,7 @@ import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import Highlighter from "react-highlight-words";
+import { FaInfo } from "react-icons/fa";
 
 const VerseList = ({ surah = "Fatiha", surahId }) => {
   const [verses_data, setVersesData] = useState([]);
@@ -185,114 +186,128 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
             let isActive = lastVerse === surah_id + "#" + verse_id;
 
             return (
-              <Link
-                href="/versedetail"
-                key={verse.id}
-                onClick={() => {
-                  dispatch(
-                    setSelectedVerse({
-                      surah_name: surah !== null ? surah : "",
-                      verse_id: verse.verse_number,
-                      surah_id: verse.surah_id,
-                    })
-                  );
-                }}
+              <div
+                className={
+                  isActive
+                    ? "verse_item bg-blue_soft text-blue_white dark:bg-blue_white dark:text-blue_soft"
+                    : "verse_item"
+                }
+                id={verse.verse_number}
               >
-                <div
-                  className={
-                    isActive
-                      ? "verse_item bg-blue_soft text-blue_white dark:bg-blue_white dark:text-blue_soft"
-                      : "verse_item"
-                  }
-                  id={verse.verse_number}
-                >
-                  <div className="w-full px-[10px] pt-[2px]">
-                    <span className="flex flex-row leading-[1.4] ">
-                      <Highlighter
-                        highlightClassName="highlight"
-                        caseSensitive={false}
-                        searchWords={[highlightedWord]}
-                        highlightStyle={
-                          theme === "dark"
-                            ? {
-                                backgroundColor: "#ecfdf5",
-                                padding: 1,
-                                color: "#008080",
-                              }
-                            : {
-                                backgroundColor: "#008080",
-                                padding: 1,
-                                color: "#ecfdf5",
-                              }
-                        }
-                        autoEscape={false}
-                        textToHighlight={
-                          verse.verse_number + "-" + verse.translation.text
-                        }
-                      />
-                    </span>
-                  </div>
-
-                  <div className="flex flex-row items-end justify-end gap-[12px] p-[10px] ml-auto ">
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{
-                        scale: 0.8,
-                      }}
-                      className="svg_container group"
-                      onClick={() => {
-                        dispatch(setLastVerse(""));
-                        localStorage.removeItem("lastVerse");
-
-                        localStorage.setItem(
-                          "lastVerse",
-                          surahId + "#" + verse.verse_number
-                        );
-                        dispatch(
-                          setLastVerse(surahId + "#" + verse.verse_number)
-                        );
-                        toast("Son okuduğunuz ayet kaydedildi.");
-                      }}
-                    >
-                      <BiSolidPin
-                        className={
-                          isActive
-                            ? "fill-blue_white dark:fill-blue_soft group-hover:fill-blue_soft dark:group-hover:fill-[#ffffff]"
-                            : "fill-blue_soft dark:fill-blue_white group-hover:fill-[#ffffff] dark:group-hover:fill-blue_soft"
-                        }
-                      />
-                    </motion.div>
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{
-                        scale: 0.8,
-                      }}
-                      className="svg_container group"
-                      onClick={() => {
-                        copyToClipboard(
-                          surah +
-                            " " +
-                            verse.verse_number +
-                            ". Ayet:  " +
-                            verse.translation.text,
-                          surah +
-                            " " +
-                            verse.verse_number +
-                            ". Ayet kopyalandı."
-                        );
-                      }}
-                    >
-                      <BiCopyAlt
-                        className={
-                          isActive
-                            ? "fill-blue_white dark:fill-blue_soft group-hover:fill-blue_soft dark:group-hover:fill-[#ffffff]"
-                            : "fill-blue_soft dark:fill-blue_white group-hover:fill-[#ffffff] dark:group-hover:fill-blue_soft"
-                        }
-                      />
-                    </motion.div>
-                  </div>
+                <div className="w-full px-[10px] pt-[2px]">
+                  <span className="flex flex-row leading-[1.4] ">
+                    <Highlighter
+                      highlightClassName="highlight"
+                      caseSensitive={false}
+                      searchWords={[highlightedWord]}
+                      highlightStyle={
+                        theme === "dark"
+                          ? {
+                              backgroundColor: "#ecfdf5",
+                              padding: 1,
+                              color: "#008080",
+                            }
+                          : {
+                              backgroundColor: "#008080",
+                              padding: 1,
+                              color: "#ecfdf5",
+                            }
+                      }
+                      autoEscape={false}
+                      textToHighlight={
+                        verse.verse_number + "-" + verse.translation.text
+                      }
+                    />
+                  </span>
                 </div>
-              </Link>
+
+                <div className="flex flex-row items-end justify-end gap-[12px] p-[10px] ml-auto ">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                    className="svg_container group"
+                    onClick={() => {
+                      dispatch(setLastVerse(""));
+                      localStorage.removeItem("lastVerse");
+
+                      localStorage.setItem(
+                        "lastVerse",
+                        surahId + "#" + verse.verse_number
+                      );
+                      dispatch(
+                        setLastVerse(surahId + "#" + verse.verse_number)
+                      );
+                      toast("Son okuduğunuz ayet kaydedildi.");
+                    }}
+                  >
+                    <BiSolidPin
+                      className={
+                        isActive
+                          ? "fill-blue_white dark:fill-blue_soft group-hover:fill-blue_soft dark:group-hover:fill-[#ffffff]"
+                          : "fill-blue_soft dark:fill-blue_white group-hover:fill-[#ffffff] dark:group-hover:fill-blue_soft"
+                      }
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                    className="svg_container group"
+                    onClick={() => {
+                      copyToClipboard(
+                        surah +
+                          " " +
+                          verse.verse_number +
+                          ". Ayet:  " +
+                          verse.translation.text,
+                        surah + " " + verse.verse_number + ". Ayet kopyalandı."
+                      );
+                    }}
+                  >
+                    <BiCopyAlt
+                      className={
+                        isActive
+                          ? "fill-blue_white dark:fill-blue_soft group-hover:fill-blue_soft dark:group-hover:fill-[#ffffff]"
+                          : "fill-blue_soft dark:fill-blue_white group-hover:fill-[#ffffff] dark:group-hover:fill-blue_soft"
+                      }
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                    className="svg_container group"
+                  >
+                    <Link
+                      href="/versedetail"
+                      key={verse.id}
+                      onClick={() => {
+                        dispatch(
+                          setSelectedVerse({
+                            surah_name: surah !== null ? surah : "",
+                            verse_id: verse.verse_number,
+                            surah_id: verse.surah_id,
+                          })
+                        );
+                      }}
+                    >
+                      <FaInfo
+                        className={
+                          isActive
+                            ? "fill-blue_white dark:fill-blue_soft group-hover:fill-blue_soft dark:group-hover:fill-[#ffffff]"
+                            : "fill-blue_soft dark:fill-blue_white group-hover:fill-[#ffffff] dark:group-hover:fill-blue_soft"
+                        }
+                      />
+                    </Link>
+                  </motion.div>
+                </div>
+              </div>
             );
           })
         ) : searchActive ? (
