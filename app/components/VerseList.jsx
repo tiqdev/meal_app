@@ -191,7 +191,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                 onClick={() => {
                   dispatch(
                     setSelectedVerse({
-                      surah_name: surah,
+                      surah_name: surah !== null ? surah : "",
                       verse_id: verse.verse_number,
                       surah_id: verse.surah_id,
                     })

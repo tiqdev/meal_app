@@ -13,7 +13,11 @@ export const mealSlice = createSlice({
     lastVerse: "",
     totalVerses: 0,
     navigatedFromPin: false,
-    selectedVerse: null,
+    selectedVerse: {
+      surah_id: 1,
+      verse_id: 1,
+      surah_name: "",
+    },
   },
   reducers: {
     setSurahs: (state, action) => {
