@@ -16,7 +16,6 @@ const AuthorsPage = () => {
     fetch("/api/authors")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         dispatch(setAuthors(data.data));
       });
   }, []);

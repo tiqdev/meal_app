@@ -13,6 +13,7 @@ export const mealSlice = createSlice({
     lastVerse: "",
     totalVerses: 0,
     navigatedFromPin: false,
+    selectedVerse: null,
   },
   reducers: {
     setSurahs: (state, action) => {
@@ -25,6 +26,10 @@ export const mealSlice = createSlice({
 
     setSurahId: (state, action) => {
       state.surah_id = action.payload;
+    },
+
+    setSelectedVerse: (state, action) => {
+      state.selectedVerse = action.payload;
     },
 
     setAuthorId: (state, action) => {
@@ -76,6 +81,7 @@ export const {
   setTheme,
   setNavigatedFromPin,
   setTotalVerses,
+  setSelectedVerse,
 } = mealSlice.actions;
 
 export default mealSlice.reducer;

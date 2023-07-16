@@ -20,6 +20,17 @@ module.exports = {
         floating: "20",
       },
 
+      backgroundImage: {
+        overlay_pattern_dark_bottom:
+          "linear-gradient(to bottom, transparent, #008080 80%)",
+        overlay_pattern_light_bottom:
+          "linear-gradient(to bottom, transparent, #ecfdf5 80%)",
+        overlay_pattern_dark_top:
+          "linear-gradient(to top, transparent, #008080 80%)",
+        overlay_pattern_light_top:
+          "linear-gradient(to top, transparent, #ecfdf5 80%)",
+      },
+
       colors: {
         cream: "#fefae0",
         soft_green: "#606c38",

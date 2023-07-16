@@ -9,23 +9,19 @@ import { Slide, ToastContainer } from "react-toastify";
 import { Provider, useSelector } from "react-redux";
 import Container from "./components/Container";
 import FloatingContainer from "./components/FloatingContainer";
+import OverlayWithInfo from "./components/OverlayWithInfo";
+import ScrollLoader from "./components/ScrollLoader";
 
 export default function RootLayout({ children }) {
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      /*
-      if (window.scrollY > window.innerHeight / 3) {
-        document.getElementById("scrolltotop").style.display = "flex";
-      } else {
-        document.getElementById("scrolltotop").style.display = "none";
-      }
-
       if (window.scrollY > 180) {
         document.getElementById("overlay_top").style.display = "flex";
+        document.getElementById("overlay").style.display = "flex";
       } else {
         document.getElementById("overlay_top").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
       }
-      */
     });
   }, []);
 
@@ -73,6 +69,8 @@ export default function RootLayout({ children }) {
                 exit="exitState"
                 variants={transitionVariants}
               >
+                <ScrollLoader />
+                <OverlayWithInfo />
                 <Navbar />
                 {children}
                 <FloatingContainer />
