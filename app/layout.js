@@ -46,7 +46,10 @@ export default function RootLayout({ children }) {
       <html lang="tr">
         <meta name="theme-color" content={"#008080"} id="theme-color-meta" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Kur'an-ı Kerim Türkçe Meali" />
+        <meta
+          name="description"
+          content="Bu site (Kur'an-ı Kerim Türkçe Meali Sitesi), insanlara faydalı olmak ve Allah'ın ilmini insanlara yaymak amacıyla çıkar gözetmeksizin Tarık Kaya tarafından oluşturulmuştur."
+        />
         <meta name="author" content="Tarık Kaya" />
         <meta name="keywords" content="Kur'an-ı Kerim, Meal, Türkçe" />
         <meta name="robots" content="index, follow" />
