@@ -45,6 +45,13 @@ export default function RootLayout({ children }) {
     <Provider store={store}>
       <html lang="tr">
         <meta name="theme-color" content={"#008080"} id="theme-color-meta" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Kur'an-ı Kerim Türkçe Meali" />
+        <meta name="author" content="Tarık Kaya" />
+        <meta name="keywords" content="Kur'an-ı Kerim, Meal, Türkçe" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="title" content="Kur'an-ı Kerim Türkçe Meali" />
         <link rel="manifest" href="/manifest.json" />
         <body className="w-full mx-auto">
           <ToastContainer
