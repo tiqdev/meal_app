@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { motion } from "framer-motion";
 
-import { BiCopyAlt, BiSolidPin } from "react-icons/bi";
+import { BiSolidCopy, BiSolidPin, BiSearchAlt2 } from "react-icons/bi";
 
 import { BsFillCaretRightFill, BsFillCaretLeftFill } from "react-icons/bs";
 
@@ -121,7 +121,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
             )}
           </div>
 
-          <h1 className="title">{surah.replace("İ", "I")}</h1>
+          <h1 className="title">{surah}</h1>
 
           <div className="w-[24px] h-[24px] flex items-center justify-center">
             {surah !== "Nas" ? (
@@ -147,7 +147,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
 
       <div className="w-full h-[50px] flex flex-row justify-center items-center border-solid border-b-[1px]  border-blue_soft_border dark:border-blue_white_border px-[12px] gap-[10px]">
         <div className="w-[24px]">
-          <BiSearch className="w-[20px] h-[20px]" />
+          <BiSearchAlt2 className="w-[20px] h-[20px]" />
         </div>
 
         <input
@@ -270,7 +270,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                       );
                     }}
                   >
-                    <BiCopyAlt
+                    <BiSolidCopy
                       className={
                         isActive
                           ? "fill-blue_white dark:fill-blue_soft group-hover:fill-blue_soft dark:group-hover:fill-[#ffffff]"
@@ -299,7 +299,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                         );
                       }}
                     >
-                      <FaInfo
+                      <BiSearchAlt2
                         className={
                           isActive
                             ? "fill-blue_white dark:fill-blue_soft group-hover:fill-blue_soft dark:group-hover:fill-[#ffffff]"

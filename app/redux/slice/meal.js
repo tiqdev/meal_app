@@ -23,19 +23,22 @@ export const mealSlice = createSlice({
       {
         id: 1,
         name: "Satoshi",
+        tailwind_class: "font-satoshi",
         font: "Satoshi, sans-serif",
       },
       {
         id: 2,
-        name: "Roboto Slab",
-        font: "Roboto Slab, serif",
+        name: "Lora",
+        tailwind_class: "font-lora",
+        font: "Lora, serif",
       },
     ],
 
     selectedFont: {
       id: 2,
-      name: "Roboto Slab",
-      font: "Roboto Slab, serif",
+      name: "Lora",
+      tailwind_class: "font-lora",
+      font: "Lora, serif",
     },
   },
   reducers: {

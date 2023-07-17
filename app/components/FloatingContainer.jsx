@@ -1,13 +1,18 @@
 "use client";
 
-import { AiFillHome } from "react-icons/ai";
 import FloatingButton from "./FloatingButton";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { MdDarkMode, MdSunny } from "react-icons/md";
-import { BiSolidPin } from "react-icons/bi";
-import { IoMdSettings } from "react-icons/io";
+import {
+  BiSolidPin,
+  BiSolidCog,
+  BiSolidSun,
+  BiSolidMoon,
+  BiSolidHome,
+  BiSolidUpvote,
+} from "react-icons/bi";
+
 import { AnimatePresence, motion, useMotionValueEvent } from "framer-motion";
 import { FaArrowUp } from "react-icons/fa";
 import { useScroll } from "framer-motion";
@@ -93,15 +98,15 @@ const FloatingContainer = () => {
           className="flex rounded-[16px] h-[56px] p-[12px] bg-floating_bg shadow-floating fixed bottom-[20px] left-1/2 -translate-x-1/2 z-[50] backdrop-blur-floating backdrop-saturate-floating"
         >
           <ul className="flex flex-row items-center h-[32px] space-x-3">
-            <FloatingButton link={"/"}>
-              <AiFillHome className="fill-blue_soft" />
+            <FloatingButton link={"/"} className="group">
+              <BiSolidHome className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />
             </FloatingButton>
             <FloatingButton link={""}>
               <div onClick={handleTheme}>
                 {theme === "dark" ? (
-                  <MdSunny className="fill-blue_soft" />
+                  <BiSolidSun className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />
                 ) : (
-                  <MdDarkMode className="fill-blue_soft" />
+                  <BiSolidMoon className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />
                 )}
               </div>
             </FloatingButton>
@@ -112,17 +117,17 @@ const FloatingContainer = () => {
                   dispatch(setNavigatedFromPin(true));
                 }}
               >
-                <BiSolidPin className="fill-blue_soft" />
+                <BiSolidPin className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />
               </div>
             </FloatingButton>
 
             <FloatingButton link={"/settings"}>
-              <IoMdSettings className="fill-blue_soft" />
+              <BiSolidCog className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />
             </FloatingButton>
 
             <FloatingButton link={""}>
               <div onClick={scrollToTop}>
-                <FaArrowUp className="fill-blue_soft" />
+                <BiSolidUpvote className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />
               </div>
             </FloatingButton>
           </ul>

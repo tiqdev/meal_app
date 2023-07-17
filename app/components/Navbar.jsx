@@ -4,10 +4,13 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { MdDarkMode, MdSunny } from "react-icons/md";
-import { BiSolidPin } from "react-icons/bi";
-import { AiFillHome } from "react-icons/ai";
-import { IoMdSettings } from "react-icons/io";
+import {
+  BiSolidPin,
+  BiSolidCog,
+  BiSolidSun,
+  BiSolidMoon,
+  BiSolidHome,
+} from "react-icons/bi";
 
 import {
   setAuthorId,
@@ -49,7 +52,7 @@ const Navbar = () => {
     if (localStorage.getItem("font") === "Satoshi") {
       document.querySelector("body").style.fontFamily = "Satoshi, sans-serif";
     } else {
-      document.querySelector("body").style.fontFamily = "Roboto Slab, serif";
+      document.querySelector("body").style.fontFamily = "Lora, serif";
     }
 
     if (localStorage.getItem("lastVerse") !== "") {
@@ -70,7 +73,7 @@ const Navbar = () => {
       <ul>
         <li>
           <Link href="/">
-            <AiFillHome className="w-[20px] h-[20px]" />
+            <BiSolidHome className="w-[20px] h-[20px]" />
           </Link>
         </li>
       </ul>
@@ -90,9 +93,9 @@ const Navbar = () => {
         <li>
           <a onClick={handleTheme}>
             {theme === "dark" ? (
-              <MdSunny className="w-[20px] h-[20px]" />
+              <BiSolidSun className="w-[20px] h-[20px]" />
             ) : (
-              <MdDarkMode className="w-[20px] h-[20px]" />
+              <BiSolidMoon className="w-[20px] h-[20px]" />
             )}
           </a>
         </li>
@@ -111,7 +114,7 @@ const Navbar = () => {
 
         <li>
           <Link href="/settings">
-            <IoMdSettings className="w-[20px] h-[20px]" />
+            <BiSolidCog className="w-[20px] h-[20px]" />
           </Link>
         </li>
       </ul>

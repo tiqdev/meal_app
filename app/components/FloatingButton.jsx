@@ -2,20 +2,19 @@ import Link from "next/link";
 
 const FloatingButton = ({ children, link }) => {
   return (
-    <li className="w-[32px] h-[32px] rounded-[10px] hover:bg-floating_icon_hover flex items-center justify-center cursor-pointer">
+    <li className="flex items-center rounded-[12px] bg-blue_soft_border  bg-opacity-20 p-[6px] hover:bg-blue_soft cursor-pointer">
       {link === "" ? (
-        <span
-          href={link}
+        <div
           id="floating_icon"
-          className="flex items-center justify-center w-[24px] bg-floating_icon_background h-[24px] border-solid border-[1px] border-floating_icon_border rounded-[7px] shadow-floating_icon"
+          className="flex items-center justify-center rounded-[7px] group"
         >
           {children}
-        </span>
+        </div>
       ) : (
         <Link
           href={link}
           id="floating_icon"
-          className="flex items-center justify-center w-[24px] bg-floating_icon_background h-[24px] border-solid border-[1px] border-floating_icon_border rounded-[7px] shadow-floating_icon"
+          className="flex items-center justify-center  rounded-[7px] group"
         >
           {children}
         </Link>

@@ -44,6 +44,11 @@ module.exports = {
         floating_icon_border: "rgba(0,0,0,.12)",
         floating_icon_hover: "rgba(0,0,0,.06)",
       },
+
+      fontFamily: {
+        lora: ["Lora", "serif"],
+        satoshi: ["Satoshi", "sans-serif"],
+      },
     },
   },
   plugins: [],

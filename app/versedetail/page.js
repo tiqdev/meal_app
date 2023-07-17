@@ -43,7 +43,7 @@ const SettingsPage = () => {
               key={index}
               className="verse_item w-full px-[10px] py-[10px] flex items-start justify-start "
             >
-              <p className=" font-[700] leading-[1.4]">{item.text}</p>
+              <p className=" font-[500] leading-[1.4]">{item.text}</p>
 
               <h2 className="ml-auto font-[400] text-[14px] mt-[10px]">
                 {item.author.name}

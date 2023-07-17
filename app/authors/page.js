@@ -4,7 +4,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuthorId, setAuthors } from "@/app/redux/slice/meal";
-import { BiRadioCircle, BiRadioCircleMarked } from "react-icons/bi";
+import {
+  BiCheckbox,
+  BiCheckboxSquare,
+  BiRadioCircle,
+  BiRadioCircleMarked,
+} from "react-icons/bi";
 
 const AuthorsPage = () => {
   const dispatch = useDispatch();
@@ -49,14 +54,14 @@ const AuthorsPage = () => {
                 key={author.id}
                 className="w-full gap-[10px] flex justify-between items-center"
               >
-                <label className="font-[700] text-[1.3rem]">
+                <label className="font-[500] text-[1.3rem]">
                   {author.name}
                 </label>
 
                 {author_id === author.id ? (
-                  <BiRadioCircleMarked className="w-[24px] h-[24px]" />
+                  <BiCheckboxSquare className="w-[32px] h-[32px]" />
                 ) : (
-                  <BiRadioCircle className="w-[24px] h-[24px]" />
+                  <BiCheckbox className="w-[32px] h-[32px]" />
                 )}
               </div>
             </div>

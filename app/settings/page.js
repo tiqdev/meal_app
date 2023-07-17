@@ -20,10 +20,10 @@ const SettingsPage = () => {
         <h1 className="title  mb-[20px]">Ayarlar</h1>
 
         <Link href={`/authors`} className="surah_item ">
-          <p className="font-[700] text-[1.3rem]">Çevirmenler</p>
+          <p className="font-[500] text-[1.3rem]">Çevirmenler</p>
         </Link>
         <Link href={`/fonts`} className="surah_item">
-          <p className="font-[700] text-[1.3rem]">Yazı Tipleri</p>
+          <p className="font-[500] text-[1.3rem]">Yazı Tipleri</p>
         </Link>
       </motion.div>
     </AnimatePresence>

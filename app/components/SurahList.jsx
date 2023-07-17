@@ -128,7 +128,7 @@ const SurahList = () => {
                       dispatch(resetSurahInfo());
                     }}
                   >
-                    <p className="font-[700] text-[1.3rem]">
+                    <p className="font-[500] text-[1.3rem]">
                       {surah.id} - {surah.name}
                     </p>
 
