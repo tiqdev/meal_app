@@ -46,8 +46,16 @@ const Navbar = () => {
       updateThemeColor("#fefae0");
     }
 
+    if (localStorage.getItem("font") === "Satoshi") {
+      document.querySelector("body").style.fontFamily = "Satoshi, sans-serif";
+    } else {
+      document.querySelector("body").style.fontFamily = "Roboto Slab, serif";
+    }
+
     if (localStorage.getItem("lastVerse") !== "") {
       dispatch(setLastVerse(localStorage.getItem("lastVerse")));
+    } else {
+      dispatch(setLastVerse(""));
     }
 
     if (localStorage.getItem("author_id") !== "") {
@@ -89,14 +97,16 @@ const Navbar = () => {
           </a>
         </li>
         <li>
-          <Link
-            href={"/surahs/" + author_id + "/" + lastVerse}
-            onClick={() => {
-              dispatch(setNavigatedFromPin(true));
-            }}
-          >
-            <BiSolidPin className="w-[20px] h-[20px]" />
-          </Link>
+          {lastVerse !== null && (
+            <Link
+              href={"/surahs/" + author_id + "/" + lastVerse}
+              onClick={() => {
+                dispatch(setNavigatedFromPin(true));
+              }}
+            >
+              <BiSolidPin className="w-[20px] h-[20px]" />
+            </Link>
+          )}
         </li>
 
         <li>

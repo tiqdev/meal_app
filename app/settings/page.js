@@ -15,12 +15,15 @@ const SettingsPage = () => {
           stiffness: 260,
           damping: 40,
         }}
-        className="flex flex-col gap-[20px] mt-[10px]"
+        className="flex flex-col mt-[10px]"
       >
-        <h1 className="title">Ayarlar</h1>
+        <h1 className="title  mb-[20px]">Ayarlar</h1>
 
         <Link href={`/authors`} className="surah_item ">
           <p className="font-[700] text-[1.3rem]">Çevirmenler</p>
+        </Link>
+        <Link href={`/fonts`} className="surah_item">
+          <p className="font-[700] text-[1.3rem]">Yazı Tipleri</p>
         </Link>
       </motion.div>
     </AnimatePresence>

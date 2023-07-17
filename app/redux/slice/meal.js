@@ -18,6 +18,25 @@ export const mealSlice = createSlice({
       verse_id: 1,
       surah_name: "",
     },
+
+    fonts: [
+      {
+        id: 1,
+        name: "Satoshi",
+        font: "Satoshi, sans-serif",
+      },
+      {
+        id: 2,
+        name: "Roboto Slab",
+        font: "Roboto Slab, serif",
+      },
+    ],
+
+    selectedFont: {
+      id: 2,
+      name: "Roboto Slab",
+      font: "Roboto Slab, serif",
+    },
   },
   reducers: {
     setSurahs: (state, action) => {
@@ -26,6 +45,14 @@ export const mealSlice = createSlice({
 
     setAuthors: (state, action) => {
       state.authors = action.payload;
+    },
+
+    setFonts: (state, action) => {
+      state.fonts = action.payload;
+    },
+
+    setSelectedFont: (state, action) => {
+      state.selectedFont = action.payload;
     },
 
     setSurahId: (state, action) => {
@@ -86,6 +113,8 @@ export const {
   setNavigatedFromPin,
   setTotalVerses,
   setSelectedVerse,
+  setFonts,
+  setSelectedFont,
 } = mealSlice.actions;
 
 export default mealSlice.reducer;
