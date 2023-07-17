@@ -51,7 +51,7 @@ export default function RootLayout({ children }) {
         <meta name="keywords" content="Kur'an-ı Kerim, Meal, Türkçe" />
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
-        <meta name="title" content="Kur'an-ı Kerim Türkçe Meali" />
+        <title>Kur'an-ı Kerim Türkçe Meali</title>
         <link rel="manifest" href="/manifest.json" />
         <body className="w-full mx-auto">
           <ToastContainer
