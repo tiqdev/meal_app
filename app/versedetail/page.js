@@ -35,7 +35,7 @@ const SettingsPage = () => {
         className="flex flex-col "
       >
         <h1 className="title">
-          {selectedVerse.surah_name + selectedVerse.verse_id + ". Ayet"}
+          {selectedVerse.surah_name + " " + selectedVerse.verse_id + ". Ayet"}
         </h1>
         <ul className=" mt-[20px]">
           {details.map((item, index) => (
