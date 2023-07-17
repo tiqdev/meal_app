@@ -14,15 +14,26 @@ import ScrollLoader from "./components/ScrollLoader";
 
 export default function RootLayout({ children }) {
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 180) {
-        document.getElementById("overlay_top").style.display = "flex";
-        document.getElementById("overlay").style.display = "flex";
-      } else {
-        document.getElementById("overlay_top").style.display = "none";
-        document.getElementById("overlay").style.display = "none";
-      }
-    });
+    document.documentElement.style.setProperty(
+      "--vh",
+      window.innerHeight * 0.01 + "px"
+    );
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    if (!isLoading) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 180) {
+          document.getElementById("overlay_top").style.display = "flex";
+          document.getElementById("overlay").style.display = "flex";
+        } else {
+          document.getElementById("overlay_top").style.display = "none";
+          document.getElementById("overlay").style.display = "none";
+        }
+      });
+    }
   }, []);
 
   const transitionVariants = {
@@ -40,6 +51,8 @@ export default function RootLayout({ children }) {
     },
     exitState: {},
   };
+
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <Provider store={store}>
@@ -71,21 +84,53 @@ export default function RootLayout({ children }) {
             theme="dark"
           />
 
+          <Container>
+            <AnimatePresence>
+              {!isLoading && (
+                <motion.div
+                  initial="initialState"
+                  animate="animateState"
+                  exit="exitState"
+                  variants={transitionVariants}
+                >
+                  <ScrollLoader />
+                  <OverlayWithInfo />
+                  <Navbar />
+                  {children}
+                  <FloatingContainer />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </Container>
+
           <AnimatePresence>
-            <Container>
+            {isLoading && (
               <motion.div
-                initial="initialState"
-                animate="animateState"
-                exit="exitState"
-                variants={transitionVariants}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 40,
+                }}
+                className="w-full h-screen absolute top-0 left-0 bg-blue_white"
               >
-                <ScrollLoader />
-                <OverlayWithInfo />
-                <Navbar />
-                {children}
-                <FloatingContainer />
+                <motion.img
+                  initial={{ opacity: 0, scale: 0.5, x: "-50%", y: "-50%" }}
+                  animate={{ opacity: 1, scale: 1, x: "-50%", y: "-50%" }}
+                  exit={{ opacity: 0, scale: 0.5, x: "-50%", y: "-50%" }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 40,
+                  }}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120px] h-[120px]"
+                  src="/logo.svg"
+                  id="logo"
+                />
               </motion.div>
-            </Container>
+            )}
           </AnimatePresence>
         </body>
       </html>
