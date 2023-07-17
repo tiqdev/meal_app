@@ -1,3 +1,3 @@
 export const openGraphImage = {
-  images: ["https://tiqdev.com/images/og.png"],
+  images: ["https://kuranmealapp.vercel.app/og-image.png"],
 };

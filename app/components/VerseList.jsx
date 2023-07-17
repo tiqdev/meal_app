@@ -81,10 +81,11 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
       setSearchActive(false);
     }
 
-    if (e.target.value.length > 1) {
+    if (e.target.value.length >= 1) {
+      console.log(verses[0]);
       setVersesData(
         verses.filter((item) =>
-          item.translation.text
+          (item.verse_number + "-" + item.translation.text)
             .replace('"', "'")
             .toLowerCase()
             .replace("i̇", "i")
@@ -151,7 +152,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
 
         <input
           type="text"
-          placeholder="Kelime ara..."
+          placeholder="Kelime yada ayet numarası..."
           className="input_bar"
           onChange={searchHandle}
         />
@@ -179,7 +180,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
 
       <div className="flex flex-col mt-[10px]">
         {verses_data.length > 0 ? (
-          verses_data.map((verse) => {
+          verses_data.map((verse, index) => {
             let verse_id = verse.verse_number;
             let surah_id = verse.surah_id;
 
@@ -187,6 +188,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
 
             return (
               <div
+                key={index}
                 className={
                   isActive
                     ? "verse_item bg-blue_soft text-blue_white dark:bg-blue_white dark:text-blue_soft"
