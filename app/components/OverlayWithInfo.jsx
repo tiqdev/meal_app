@@ -16,7 +16,7 @@ const OverlayWithInfo = ({}) => {
       >
         {surah_name && (
           <>
-            <span className="text-blue_soft dark:text-blue_white font-[500]">
+            <span className="text-blue_soft dark:text-blue_white font-[700]">
               {surah_name} Suresi - {totalVerses} Ayet
             </span>
           </>

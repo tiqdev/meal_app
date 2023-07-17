@@ -23,17 +23,15 @@ export default function RootLayout({ children }) {
       setIsLoading(false);
     }, 2000);
 
-    if (!isLoading) {
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 180) {
-          document.getElementById("overlay_top").style.display = "flex";
-          document.getElementById("overlay").style.display = "flex";
-        } else {
-          document.getElementById("overlay_top").style.display = "none";
-          document.getElementById("overlay").style.display = "none";
-        }
-      });
-    }
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 180) {
+        document.getElementById("overlay_top").style.display = "flex";
+        document.getElementById("overlay").style.display = "flex";
+      } else {
+        document.getElementById("overlay_top").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+      }
+    });
   }, []);
 
   const transitionVariants = {

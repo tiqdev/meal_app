@@ -73,7 +73,7 @@ const Navbar = () => {
       <ul>
         <li>
           <Link href="/">
-            <BiSolidHome className="w-[20px] h-[20px]" />
+            <BiSolidHome className="w-[20px] h-[20px] " />
           </Link>
         </li>
       </ul>
@@ -93,9 +93,9 @@ const Navbar = () => {
         <li>
           <a onClick={handleTheme}>
             {theme === "dark" ? (
-              <BiSolidSun className="w-[20px] h-[20px]" />
+              <BiSolidSun className="w-[20px] h-[20px] cursor-pointer" />
             ) : (
-              <BiSolidMoon className="w-[20px] h-[20px]" />
+              <BiSolidMoon className="w-[20px] h-[20px] cursor-pointer" />
             )}
           </a>
         </li>

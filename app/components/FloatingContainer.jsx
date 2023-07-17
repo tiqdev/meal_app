@@ -102,7 +102,10 @@ const FloatingContainer = () => {
               <BiSolidHome className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />
             </FloatingButton>
             <FloatingButton link={""}>
-              <div onClick={handleTheme}>
+              <div
+                onClick={handleTheme}
+                className="w-[30px] h-[30px] flex items-center justify-center"
+              >
                 {theme === "dark" ? (
                   <BiSolidSun className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />
                 ) : (
@@ -113,6 +116,7 @@ const FloatingContainer = () => {
 
             <FloatingButton link={"/surahs/" + author_id + "/" + lastVerse}>
               <div
+                className="w-[30px] h-[30px] flex items-center justify-center"
                 onClick={() => {
                   dispatch(setNavigatedFromPin(true));
                 }}
@@ -126,7 +130,10 @@ const FloatingContainer = () => {
             </FloatingButton>
 
             <FloatingButton link={""}>
-              <div onClick={scrollToTop}>
+              <div
+                onClick={scrollToTop}
+                className="w-[30px] h-[30px] flex items-center justify-center"
+              >
                 <BiSolidUpvote className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />
               </div>
             </FloatingButton>
