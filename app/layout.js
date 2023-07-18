@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import store from "./redux/configureStore";
+import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
 import { Slide, ToastContainer } from "react-toastify";
@@ -68,6 +69,7 @@ export default function RootLayout({ children }) {
         <title>Kur'an-ı Kerim Türkçe Meali</title>
         <link rel="manifest" href="/manifest.json" />
         <body className="w-full mx-auto">
+          <Analytics />
           <ToastContainer
             position="top-center"
             transition={Slide}
