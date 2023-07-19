@@ -49,6 +49,7 @@ module.exports = {
       fontFamily: {
         lora: ["Lora", "serif"],
         satoshi: ["Satoshi", "sans-serif"],
+        arabic: ["Noto Sans Arabic"],
       },
     },
   },

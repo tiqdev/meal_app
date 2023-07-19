@@ -15,9 +15,7 @@ import {
   resetSurahInfo,
   setLastVerse,
   setNavigatedFromPin,
-  setOldVerses,
   setSelectedVerse,
-  setVerses,
 } from "@/app/redux/slice/meal";
 import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
@@ -82,6 +80,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
     }
 
     if (e.target.value.length >= 1) {
+      3;
       setVersesData(
         verses.filter((item) =>
           (item.verse_number + "-" + item.translation.text)
