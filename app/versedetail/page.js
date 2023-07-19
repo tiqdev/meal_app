@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import AnimatedContainer from "@/components/AnimatedContainer";
+
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
@@ -22,37 +22,25 @@ const SettingsPage = () => {
   }, [selectedVerse]);
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ y: 150, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 150, opacity: 0 }}
-        transition={{
-          type: "spring",
-          stiffness: 260,
-          damping: 40,
-        }}
-        className="flex flex-col "
-      >
-        <h1 className="title">
-          {selectedVerse.surah_name + " " + selectedVerse.verse_id + ". Ayet"}
-        </h1>
-        <ul className=" mt-[20px]">
-          {details.map((item, index) => (
-            <li
-              key={index}
-              className="verse_item w-full px-[10px] py-[10px] flex items-start justify-start "
-            >
-              <p className=" font-[500] leading-[1.4]">{item.text}</p>
+    <AnimatedContainer>
+      <h1 className="title">
+        {selectedVerse.surah_name + " " + selectedVerse.verse_id + ". Ayet"}
+      </h1>
+      <ul className=" mt-[20px]">
+        {details.map((item, index) => (
+          <li
+            key={index}
+            className="verse_item w-full px-[10px] py-[10px] flex items-start justify-start "
+          >
+            <p className=" font-[500] leading-[1.4]">{item.text}</p>
 
-              <h2 className="ml-auto font-[400] text-[14px] mt-[10px]">
-                {item.author.name}
-              </h2>
-            </li>
-          ))}
-        </ul>
-      </motion.div>
-    </AnimatePresence>
+            <h2 className="ml-auto font-[400] text-[14px] mt-[10px]">
+              {item.author.name}
+            </h2>
+          </li>
+        ))}
+      </ul>
+    </AnimatedContainer>
   );
 };
 

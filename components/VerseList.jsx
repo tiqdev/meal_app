@@ -1,6 +1,6 @@
 "use client";
 
-import { copyToClipboard } from "@/app/utils/clipboard";
+import { copyToClipboard } from "@/utils/clipboard";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { motion } from "framer-motion";
@@ -82,7 +82,6 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
     }
 
     if (e.target.value.length >= 1) {
-      console.log(verses[0]);
       setVersesData(
         verses.filter((item) =>
           (item.verse_number + "-" + item.translation.text)

@@ -1,5 +1,5 @@
 "use client";
-import Container from "@/app/components/Container";
+import Container from "@/components/Container";
 import {
   setAuthorId,
   setSurahId,
@@ -7,9 +7,9 @@ import {
   setTotalVerses,
   setVerses,
 } from "@/app/redux/slice/meal";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import VerseList from "../../../components/VerseList";
+import VerseList from "../../../../components/VerseList";
 
 const SurahPage = ({ params }) => {
   let surahId = params.id;

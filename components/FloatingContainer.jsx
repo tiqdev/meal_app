@@ -22,7 +22,7 @@ import {
   setLastVerse,
   setNavigatedFromPin,
   setTheme,
-} from "../redux/slice/meal";
+} from "../app/redux/slice/meal";
 
 import { updateThemeColor } from "../utils/changeThemeColor";
 
