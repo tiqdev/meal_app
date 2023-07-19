@@ -1,11 +1,11 @@
 "use client";
 
 import AnimatedContainer from "@/components/AnimatedContainer";
-import "react-tooltip/dist/react-tooltip.css";
 
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Tooltip as ReactTooltip } from "react-tooltip";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css"; // optional
 
 const SettingsPage = () => {
   const [details, setDetails] = useState([]);
@@ -40,26 +40,15 @@ const SettingsPage = () => {
       <div className=" text-right arabic_text px-[10px] w-full max-w-[1200px] flex flex-row-reverse flex-wrap items-end justify-start gap-[16px]">
         {words.map((item, index) => (
           <span key={index}>
-            <span
-              id={`tooltip_${index}`}
-              key={index}
-              className="hover:text-orange"
-            >
-              {item.arabic}
-            </span>
-            <ReactTooltip
-              anchorId={`tooltip_${index}`}
-              place="bottom"
-              offset={0}
-              content={item.turkish}
-              style={{
-                backgroundColor: theme === "dark" ? "#ecfdf5" : "#008080",
-                color: theme === "dark" ? "#008080" : "#ecfdf5",
-                fontSize: "16px",
-                fontWeight: "700",
-                borderRadius: "12px",
-              }}
-            />
+            <Tippy content={item.turkish}>
+              <span
+                id={`tooltip_${index}`}
+                key={index}
+                className="hover:text-orange"
+              >
+                {item.arabic}
+              </span>
+            </Tippy>
           </span>
         ))}
       </div>
