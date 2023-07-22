@@ -1375,6 +1375,7 @@ export const mealSlice = createSlice({
       },
     ],
     verses: [],
+    bookmarkedVerses: [],
     surah_id: 1,
     author_id: 6,
     surah_name: "",
@@ -1420,6 +1421,10 @@ export const mealSlice = createSlice({
 
     setSelectedFont: (state, action) => {
       state.selectedFont = action.payload;
+    },
+
+    setBookMarkedVerses: (state, action) => {
+      state.bookmarkedVerses = action.payload;
     },
 
     setSurahId: (state, action) => {
@@ -1481,6 +1486,7 @@ export const {
   setSelectedVerse,
   setFonts,
   setSelectedFont,
+  setBookMarkedVerses,
 } = mealSlice.actions;
 
 export default mealSlice.reducer;

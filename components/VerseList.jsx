@@ -7,12 +7,18 @@ import { motion } from "framer-motion";
 
 import { BiSolidCopy, BiSolidPin, BiSearchAlt2 } from "react-icons/bi";
 
-import { BsFillCaretRightFill, BsFillCaretLeftFill } from "react-icons/bs";
+import {
+  BsFillCaretRightFill,
+  BsFillCaretLeftFill,
+  BsBookmark,
+  BsBookmarkFill,
+} from "react-icons/bs";
 
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import {
   resetSurahInfo,
+  setBookMarkedVerses,
   setLastVerse,
   setNavigatedFromPin,
   setSelectedVerse,
@@ -22,6 +28,14 @@ import { AiOutlineClose } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import Highlighter from "react-highlight-words";
 import { FaInfo } from "react-icons/fa";
+import {
+  addFav,
+  clearFavList,
+  getFavCount,
+  getFavList,
+  isFav,
+  removeFav,
+} from "@/utils/localStorageManager";
 
 const VerseList = ({ surah = "Fatiha", surahId }) => {
   const [verses_data, setVersesData] = useState([]);
@@ -32,6 +46,8 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
   const lastVerse = useSelector((state) => state.meal.lastVerse);
   const navigatedFromPin = useSelector((state) => state.meal.navigatedFromPin);
   const author_id = useSelector((state) => state.meal.author_id);
+  const bookmarkedVerses = useSelector((state) => state.meal.bookmarkedVerses);
+
   const [canRender, setCanRender] = useState(false);
   const [searchActive, setSearchActive] = useState(false);
 
@@ -177,12 +193,23 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
       </div>
 
       <div className="flex flex-col mt-[10px]">
-        {verses_data.length > 0 ? (
+        {verses_data.length > 0 && bookmarkedVerses !== null ? (
           verses_data.map((verse, index) => {
             let verse_id = verse.verse_number;
             let surah_id = verse.surah_id;
 
             let isActive = lastVerse === surah_id + "#" + verse_id;
+
+            let isBookmarked = bookmarkedVerses.some(
+              (item) => item.id === surah_id + "#" + verse_id
+            );
+
+            let _verse = {
+              id: surah_id + "#" + verse_id,
+              surah_id: surah_id,
+              verse_id: verse_id,
+              verse: verse.translation.text,
+            };
 
             return (
               <div
@@ -305,6 +332,38 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                         }
                       />
                     </Link>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                    }}
+                    className="svg_container group"
+                    onClick={() => {
+                      let _bookmarkedVerses = [...bookmarkedVerses];
+
+                      if (isFav(_verse)) {
+                        removeFav(_verse);
+                        _bookmarkedVerses = [...bookmarkedVerses];
+                        _bookmarkedVerses.splice(
+                          _bookmarkedVerses.indexOf(_verse),
+                          1
+                        );
+
+                        dispatch(setBookMarkedVerses(_bookmarkedVerses));
+
+                        toast("Ayet favorilerden kaldırıldı.");
+                        return;
+                      }
+
+                      addFav(_verse);
+                      _bookmarkedVerses.push(_verse);
+                      dispatch(setBookMarkedVerses(_bookmarkedVerses));
+                      toast("Ayet kaydedildi.");
+                    }}
+                  >
+                    {isBookmarked ? <BsBookmarkFill /> : <BsBookmark />}
                   </motion.div>
                 </div>
               </div>

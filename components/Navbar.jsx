@@ -14,12 +14,14 @@ import {
 
 import {
   setAuthorId,
+  setBookMarkedVerses,
   setLastVerse,
   setNavigatedFromPin,
   setTheme,
 } from "../app/redux/slice/meal";
 
 import { updateThemeColor } from "../utils/changeThemeColor";
+import { fav_list_key } from "@/utils/localStorageManager";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -29,6 +31,7 @@ const Navbar = () => {
 
   const handleTheme = () => {
     document.querySelector("body").classList.toggle("dark");
+
     if (localStorage.getItem("theme") === "dark") {
       localStorage.setItem("theme", "light");
       dispatch(setTheme("light"));
@@ -47,6 +50,14 @@ const Navbar = () => {
       document.querySelector("body").classList.remove("dark");
       dispatch(setTheme("light"));
       updateThemeColor("#fefae0");
+    }
+
+    if (localStorage.getItem(fav_list_key) !== null) {
+      dispatch(
+        setBookMarkedVerses(JSON.parse(localStorage.getItem(fav_list_key)))
+      );
+    } else {
+      dispatch(setBookMarkedVerses([]));
     }
 
     if (localStorage.getItem("font") === "Satoshi") {
