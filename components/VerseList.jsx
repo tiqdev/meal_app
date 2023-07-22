@@ -334,6 +334,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                     </Link>
                   </motion.div>
 
+                  {/*
                   <motion.div
                     whileHover={{ scale: 1.1 }}
                     whileTap={{
@@ -344,12 +345,13 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                       let _bookmarkedVerses = [...bookmarkedVerses];
 
                       if (isFav(_verse)) {
-                        removeFav(_verse);
                         _bookmarkedVerses = [...bookmarkedVerses];
+
                         _bookmarkedVerses.splice(
                           _bookmarkedVerses.indexOf(_verse),
                           1
                         );
+                        removeFav(_verse);
 
                         dispatch(setBookMarkedVerses(_bookmarkedVerses));
 
@@ -365,6 +367,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                   >
                     {isBookmarked ? <BsBookmarkFill /> : <BsBookmark />}
                   </motion.div>
+                */}
                 </div>
               </div>
             );

@@ -15,9 +15,9 @@ export const addFav = (item) => {
 };
 
 export const removeFav = (item) => {
-  const list = getFavList();
-  const newList = list.filter((i) => i.id !== item.id);
-  localStorage.setItem(fav_list_key, JSON.stringify(newList));
+  let list = getFavList();
+  list.splice(list.indexOf(item), 1);
+  localStorage.setItem(fav_list_key, JSON.stringify(list));
 };
 
 export const isFav = (item) => {
