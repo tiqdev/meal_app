@@ -1,3 +1,5 @@
+const _ = require("lodash");
+
 export const fav_list_key = "fav_list";
 
 export const getFavList = () => {
@@ -16,13 +18,13 @@ export const addFav = (item) => {
 
 export const removeFav = (item) => {
   let list = getFavList();
-  list.splice(list.indexOf(item), 1);
+  list = _.remove(list, (i) => i.id !== item.id);
   localStorage.setItem(fav_list_key, JSON.stringify(list));
 };
 
 export const isFav = (item) => {
   const list = getFavList();
-  const found = list.find((i) => i.id === item.id);
+  const found = _.find(list, (i) => i.id === item.id);
   return found ? true : false;
 };
 

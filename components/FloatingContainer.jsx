@@ -25,6 +25,8 @@ import {
 } from "../app/redux/slice/meal";
 
 import { updateThemeColor } from "../utils/changeThemeColor";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const FloatingContainer = () => {
   const dispatch = useDispatch();
@@ -114,11 +116,23 @@ const FloatingContainer = () => {
               </div>
             </FloatingButton>
 
-            <FloatingButton link={"/surahs/" + author_id + "/" + lastVerse}>
+            <FloatingButton
+              link={
+                lastVerse !== undefined &&
+                lastVerse !== null &&
+                lastVerse !== ""
+                  ? "/surahs/" + author_id + "/" + lastVerse
+                  : ""
+              }
+            >
               <div
                 className="w-[30px] h-[30px] flex items-center justify-center"
                 onClick={() => {
-                  dispatch(setNavigatedFromPin(true));
+                  lastVerse !== undefined &&
+                  lastVerse !== null &&
+                  lastVerse !== ""
+                    ? dispatch(setNavigatedFromPin(true))
+                    : toast("Son okuduğunuz ayet bulunamadı.");
                 }}
               >
                 <BiSolidPin className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />

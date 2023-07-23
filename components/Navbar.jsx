@@ -22,6 +22,7 @@ import {
 
 import { updateThemeColor } from "../utils/changeThemeColor";
 import { fav_list_key } from "@/utils/localStorageManager";
+import { BsBookmarkFill } from "react-icons/bs";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -102,13 +103,9 @@ const Navbar = () => {
 
       <ul className="flex flex-row items-center justify-center gap-[12px]">
         <li>
-          <a onClick={handleTheme}>
-            {theme === "dark" ? (
-              <BiSolidSun className="w-[20px] h-[20px] cursor-pointer" />
-            ) : (
-              <BiSolidMoon className="w-[20px] h-[20px] cursor-pointer" />
-            )}
-          </a>
+          <Link href="/bookmarks">
+            <BsBookmarkFill className="w-[20px] h-[20px] " />
+          </Link>
         </li>
         <li>
           {lastVerse !== null && (

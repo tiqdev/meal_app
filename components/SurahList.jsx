@@ -30,10 +30,12 @@ const SurahList = () => {
       setFirstLoad(false);
     }
 
-    if (lastVerse.includes("#")) {
-      let surah_id = lastVerse.split("#")[0];
+    if (lastVerse !== "" && lastVerse !== null) {
+      if (lastVerse.includes("#")) {
+        let surah_id = lastVerse.split("#")[0];
 
-      setSavedSurah(parseInt(surah_id));
+        setSavedSurah(parseInt(surah_id));
+      }
     }
   }, []);
 

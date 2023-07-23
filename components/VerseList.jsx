@@ -200,14 +200,16 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
 
             let isActive = lastVerse === surah_id + "#" + verse_id;
 
-            let isBookmarked = bookmarkedVerses.some(
-              (item) => item.id === surah_id + "#" + verse_id
-            );
+            let isBookmarked =
+              _.find(bookmarkedVerses, {
+                id: surah_id + "#" + verse_id,
+              }) !== undefined;
 
             let _verse = {
               id: surah_id + "#" + verse_id,
               surah_id: surah_id,
               verse_id: verse_id,
+              surah_name: surah !== null ? surah : "",
               verse: verse.translation.text,
             };
 
@@ -254,7 +256,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                     whileTap={{
                       scale: 0.8,
                     }}
-                    className="svg_container group"
+                    className="svg_container group "
                     onClick={() => {
                       dispatch(setLastVerse(""));
                       localStorage.removeItem("lastVerse");
@@ -283,7 +285,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                     whileTap={{
                       scale: 0.8,
                     }}
-                    className="svg_container group"
+                    className="svg_container group "
                     onClick={() => {
                       copyToClipboard(
                         surah +
@@ -304,25 +306,25 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                     />
                   </motion.div>
 
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{
-                      scale: 0.8,
+                  <Link
+                    href="/versedetail"
+                    key={verse.id}
+                    onClick={() => {
+                      dispatch(
+                        setSelectedVerse({
+                          surah_name: surah !== null ? surah : "",
+                          verse_id: verse.verse_number,
+                          surah_id: verse.surah_id,
+                        })
+                      );
                     }}
-                    className="svg_container group"
                   >
-                    <Link
-                      href="/versedetail"
-                      key={verse.id}
-                      onClick={() => {
-                        dispatch(
-                          setSelectedVerse({
-                            surah_name: surah !== null ? surah : "",
-                            verse_id: verse.verse_number,
-                            surah_id: verse.surah_id,
-                          })
-                        );
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{
+                        scale: 0.8,
                       }}
+                      className="svg_container group"
                     >
                       <BiSearchAlt2
                         className={
@@ -331,43 +333,58 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                             : "fill-blue_soft dark:fill-blue_white group-hover:fill-[#ffffff] dark:group-hover:fill-blue_soft"
                         }
                       />
-                    </Link>
-                  </motion.div>
+                    </motion.div>
+                  </Link>
+                  {
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{
+                        scale: 0.8,
+                      }}
+                      className="svg_container group"
+                      onClick={() => {
+                        let _bookmarkedVerses = [...bookmarkedVerses];
 
-                  {/*
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{
-                      scale: 0.8,
-                    }}
-                    className="svg_container group"
-                    onClick={() => {
-                      let _bookmarkedVerses = [...bookmarkedVerses];
+                        if (isFav(_verse)) {
+                          _bookmarkedVerses = [...bookmarkedVerses];
 
-                      if (isFav(_verse)) {
-                        _bookmarkedVerses = [...bookmarkedVerses];
+                          _.remove(_bookmarkedVerses, function (n) {
+                            return n.id === _verse.id;
+                          });
 
-                        _bookmarkedVerses.splice(
-                          _bookmarkedVerses.indexOf(_verse),
-                          1
-                        );
-                        removeFav(_verse);
+                          removeFav(_verse);
 
+                          dispatch(setBookMarkedVerses(_bookmarkedVerses));
+
+                          toast("Ayet favorilerden kaldırıldı.");
+                          return;
+                        }
+
+                        addFav(_verse);
+                        _bookmarkedVerses.push(_verse);
                         dispatch(setBookMarkedVerses(_bookmarkedVerses));
-
-                        toast("Ayet favorilerden kaldırıldı.");
-                        return;
-                      }
-
-                      addFav(_verse);
-                      _bookmarkedVerses.push(_verse);
-                      dispatch(setBookMarkedVerses(_bookmarkedVerses));
-                      toast("Ayet kaydedildi.");
-                    }}
-                  >
-                    {isBookmarked ? <BsBookmarkFill /> : <BsBookmark />}
-                  </motion.div>
-                */}
+                        toast("Ayet kaydedildi.");
+                      }}
+                    >
+                      {isBookmarked ? (
+                        <BsBookmarkFill
+                          className={
+                            isActive
+                              ? "fill-blue_white dark:fill-blue_soft group-hover:fill-blue_soft dark:group-hover:fill-[#ffffff]"
+                              : "fill-blue_soft dark:fill-blue_white group-hover:fill-[#ffffff] dark:group-hover:fill-blue_soft"
+                          }
+                        />
+                      ) : (
+                        <BsBookmark
+                          className={
+                            isActive
+                              ? "fill-blue_white dark:fill-blue_soft group-hover:fill-blue_soft dark:group-hover:fill-[#ffffff]"
+                              : "fill-blue_soft dark:fill-blue_white group-hover:fill-[#ffffff] dark:group-hover:fill-blue_soft"
+                          }
+                        />
+                      )}
+                    </motion.div>
+                  }
                 </div>
               </div>
             );

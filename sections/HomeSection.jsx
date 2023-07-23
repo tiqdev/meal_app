@@ -67,9 +67,7 @@ const HomeSection = ({ children }) => {
           newestOnTop={false}
           closeOnClick
           rtl={false}
-          pauseOnFocusLoss
           draggable
-          pauseOnHover
           theme="dark"
         />
 
