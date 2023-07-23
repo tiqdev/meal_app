@@ -29,7 +29,9 @@ const BookmarksList = () => {
               className="w-full gap-[10px] flex flex-col justify-center items-start"
             >
               <span className="font-[400] italic">{item.surah_name}</span>
-              <span className="font-[500] leading-[1.4]">{item.verse}</span>
+              <span className="font-[500] leading-[1.4]">
+                {item.verse_id + " - " + item.verse}
+              </span>
             </div>
             <div className="flex flex-row items-end justify-end gap-[12px] p-[10px] ml-auto ">
               <motion.div
