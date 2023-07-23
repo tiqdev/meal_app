@@ -11,13 +11,13 @@ export const metadata = {
   publisher: "Tarık Kaya",
   creator: "Tarık Kaya",
   description:
-    "Bu site (Kur'an-ı Kerim Türkçe Meali Sitesi), insanlara faydalı olmak ve Allah'ın ilmini insanlara yaymak amacıyla çıkar gözetmeksizin Tarık Kaya tarafından oluşturulmuştur.",
+    "Bu site (Kur'an-ı Kerim Türkçe Meali), insanlara faydalı olmak ve Allah'ın ilmini insanlara yaymak amacıyla, çıkar gözetmeksizin Tarık Kaya tarafından oluşturulmuştur.",
   url: "https://kuranmealapp.vercel.app",
   openGraph: {
     ...openGraphImage,
     title: "Kur'an-ı Kerim Türkçe Meali",
     description:
-      "Bu site (Kur'an-ı Kerim Türkçe Meali Sitesi), insanlara faydalı olmak ve Allah'ın ilmini insanlara yaymak amacıyla çıkar gözetmeksizin Tarık Kaya tarafından oluşturulmuştur.",
+      "Bu site (Kur'an-ı Kerim Türkçe Meali), insanlara faydalı olmak ve Allah'ın ilmini insanlara yaymak amacıyla, çıkar gözetmeksizin Tarık Kaya tarafından oluşturulmuştur.",
     site_name: "Kur'an-ı Kerim Türkçe Meali",
     locale: "tr_TR",
     type: "website",
