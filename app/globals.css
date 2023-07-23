@@ -2,14 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 :root{
   --rt-opacity :  1;
   --rt-top :  0;
 
-    --toastify-color-light: #fff;
-    --toastify-color-dark: #008080;
+    --toastify-color-light: #ecfdf5 !important;
+    --toastify-color-dark: #008080 !important;
     --toastify-color-info: #3498db;
     --toastify-color-success: #07bc0c;
     --toastify-color-warning: #f1c40f;
@@ -50,7 +48,7 @@
       #ff2d55
     );
  
-    --toastify-color-progress-dark: #ecfdf5;
+    --toastify-color-progress-dark: #ecfdf5 !important;
     --toastify-color-progress-info: var(--toastify-color-info);
     --toastify-color-progress-success: var(--toastify-color-success);
     --toastify-color-progress-warning: var(--toastify-color-warning);

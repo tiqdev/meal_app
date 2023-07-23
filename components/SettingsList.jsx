@@ -9,6 +9,9 @@ const SettingsList = () => {
       <Link href={`/fonts`} className="surah_item">
         <p className="font-[500] text-[1.3rem]">Yazı Tipleri</p>
       </Link>
+      <Link href={`/about`} className="surah_item">
+        <p className="font-[500] text-[1.3rem]">Uygulama Hakkında</p>
+      </Link>
     </>
   );
 };
