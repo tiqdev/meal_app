@@ -6,8 +6,8 @@
   --rt-opacity :  1;
   --rt-top :  0;
 
-    --toastify-color-light: #ecfdf5 !important;
-    --toastify-color-dark: #008080 !important;
+    --toastify-color-light: #F7F3EE !important;
+    --toastify-color-dark: #291911 !important;
     --toastify-color-info: #3498db;
     --toastify-color-success: #07bc0c;
     --toastify-color-warning: #f1c40f;
@@ -30,10 +30,10 @@
     --toastify-text-color-dark: #fff;
   
 
-    --toastify-text-color-info: #ecfdf5;
-    --toastify-text-color-success: #ecfdf5;
-    --toastify-text-color-warning: #ecfdf5;
-    --toastify-text-color-error: #ecfdf5;
+    --toastify-text-color-info: #F7F3EE;
+    --toastify-text-color-success: #F7F3EE;
+    --toastify-text-color-warning: #F7F3EE;
+    --toastify-text-color-error: #F7F3EE;
   
     --toastify-spinner-color: #616161;
     --toastify-spinner-color-empty-area: #e0e0e0;
@@ -48,7 +48,7 @@
       #ff2d55
     );
  
-    --toastify-color-progress-dark: #ecfdf5 !important;
+    --toastify-color-progress-dark: #F7F3EE !important;
     --toastify-color-progress-info: var(--toastify-color-info);
     --toastify-color-progress-success: var(--toastify-color-success);
     --toastify-color-progress-warning: var(--toastify-color-warning);
@@ -66,27 +66,27 @@
   }
 
   .input_bar{
-    @apply w-full h-full outline-none bg-transparent border-none text-[1.3rem] leading-[1.3] placeholder:opacity-60 placeholder-blue_soft dark:placeholder-blue_white
+    @apply w-full h-full outline-none bg-transparent border-none text-[1.3rem] leading-[1.3] placeholder:opacity-60 placeholder-brown_soft dark:placeholder-cream_white
   }
 
   .verse_item{
-    @apply flex flex-col items-start justify-start pt-[10px] gap-[4px] tracking-wide text-[18px] font-[500] border-solid border-b-[1px] border-blue_soft_border dark:border-blue_white_border
+    @apply flex flex-col items-start justify-start pt-[10px] gap-[4px] tracking-wide text-[18px] font-[500] border-solid border-b-[1px] border-brown_soft_border dark:border-cream_white_border
   }
 
   .svg_container{
-    @apply flex items-center rounded-[12px] bg-blue_soft_border  dark:bg-blue_white_border bg-opacity-20 p-[6px] cursor-pointer hover:bg-blue_soft dark:hover:bg-blue_white
+    @apply flex items-center rounded-[12px] bg-brown_soft_border  dark:bg-cream_white_border bg-opacity-20 p-[6px] cursor-pointer hover:bg-brown_soft dark:hover:bg-cream_bg
   }
 
   .badge{
-    @apply flex items-center justify-center w-[20px] h-[20px] rounded-[50%] bg-blue_soft text-blue_white dark:bg-blue_white dark:text-blue_soft  text-[0.62rem] font-[500]
+    @apply flex items-center justify-center w-[20px] h-[20px] rounded-[50%] bg-brown_soft text-cream_white dark:bg-cream_bg dark:text-brown_soft  text-[0.62rem] font-[500]
   }
 
   .not_found{
-    @apply flex flex-col items-center justify-center w-full h-[200px] text-[1.2rem] font-[500] text-center text-blue_soft dark:text-blue_white
+    @apply flex flex-col items-center justify-center w-full h-[200px] text-[1.2rem] font-[500] text-center text-brown_soft dark:text-cream_white
   }
 
   .surah_item{
-    @apply flex flex-row justify-between items-center p-[10px] py-[20px] border-solid border-b-[1px] border-blue_soft_border dark:border-blue_white_border
+    @apply flex flex-row justify-between items-center p-[10px] py-[20px] border-solid border-b-[1px] border-brown_soft_border dark:border-cream_white_border
   }
 
   .old_floating_button{
@@ -95,6 +95,19 @@
 
   .old_floating_icon{
     @apply flex items-center justify-center w-[24px] bg-floating_icon_background h-[24px] border-solid border-[1px] border-floating_icon_border rounded-[7px] shadow-floating_icon
+  }
+}
+
+@layer base{
+  :root{
+    --color-cream_white: "#F7F3EE";
+    --color-brown_soft: "#291911";
+    --color-brown_soft_border: "rgba(0, 128, 128,0.2)";
+    --color-cream_white_border: "rgba(236, 253, 245,0.2)";
+    --color-orange: "#dda15e";
+    --color-floating_bg: "hsla(0,0%,100%,.88)";
+    --color-floating_icon_border: "rgba(0,0,0,.12)";
+    --color-floating_icon_hover: "rgba(0,0,0,.06)";
   }
 }
 
@@ -365,8 +378,8 @@ body {
   user-select: none;
   font-family: "Satoshi", sans-serif;
   position: relative;
-  background-color: #ecfdf5;
-  color:#008080;
+  background-color: #F7F3EE;
+  color:#291911;
   transition: all 0.3s ease-in-out;
   position: relative;
   padding-bottom: 100px;
@@ -374,8 +387,8 @@ body {
 }
 
 body.dark {
-  background-color: #008080;
-  color: #ecfdf5;
+  background-color: #291911;
+  color: #F7F3EE;
 
 }
 

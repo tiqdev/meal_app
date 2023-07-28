@@ -18,7 +18,7 @@ const AuthorList = ({ authors }) => {
       {authors.length !== 0 &&
         authors.map((author, index) => (
           <div
-            className="w-full flex flex-row justify-between items-center p-[10px] py-[20px] border-solid border-b-[1px] border-blue_soft_border dark:border-blue_white_border"
+            className="w-full flex flex-row justify-between items-center p-[10px] py-[20px] border-solid border-b-[1px] border-brown_soft_border dark:border-cream_white_border"
             key={index}
             onClick={() => handleCheckbox(author.id)}
           >

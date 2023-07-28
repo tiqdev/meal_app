@@ -56,11 +56,11 @@ const FloatingContainer = () => {
     if (localStorage.getItem("theme") === "dark") {
       document.querySelector("body").classList.add("dark");
       dispatch(setTheme("dark"));
-      updateThemeColor("#008080");
+      updateThemeColor("#291911");
     } else {
       document.querySelector("body").classList.remove("dark");
       dispatch(setTheme("light"));
-      updateThemeColor("#ecfdf5");
+      updateThemeColor("#F7F3EE");
     }
 
     if (localStorage.getItem("lastVerse") !== "") {
@@ -101,7 +101,7 @@ const FloatingContainer = () => {
         >
           <ul className="flex flex-row items-center h-[32px] space-x-3">
             <FloatingButton link={"/"} className="group">
-              <BiSolidHome className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />
+              <BiSolidHome className="fill-brown_soft w-[18px] h-[18px] group-hover:fill-cream_white" />
             </FloatingButton>
             <FloatingButton link={""}>
               <div
@@ -109,9 +109,9 @@ const FloatingContainer = () => {
                 className="w-[30px] h-[30px] flex items-center justify-center"
               >
                 {theme === "dark" ? (
-                  <BiSolidSun className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />
+                  <BiSolidSun className="fill-brown_soft w-[18px] h-[18px] group-hover:fill-cream_white" />
                 ) : (
-                  <BiSolidMoon className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />
+                  <BiSolidMoon className="fill-brown_soft w-[18px] h-[18px] group-hover:fill-cream_white" />
                 )}
               </div>
             </FloatingButton>
@@ -135,12 +135,12 @@ const FloatingContainer = () => {
                     : toast("Son okuduğunuz ayet bulunamadı.");
                 }}
               >
-                <BiSolidPin className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />
+                <BiSolidPin className="fill-brown_soft w-[18px] h-[18px] group-hover:fill-cream_white" />
               </div>
             </FloatingButton>
 
             <FloatingButton link={"/settings"}>
-              <BiSolidCog className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />
+              <BiSolidCog className="fill-brown_soft w-[18px] h-[18px] group-hover:fill-cream_white" />
             </FloatingButton>
 
             <FloatingButton link={""}>
@@ -148,7 +148,7 @@ const FloatingContainer = () => {
                 onClick={scrollToTop}
                 className="w-[30px] h-[30px] flex items-center justify-center"
               >
-                <BiSolidUpvote className="fill-blue_soft w-[18px] h-[18px] group-hover:fill-blue_white" />
+                <BiSolidUpvote className="fill-brown_soft w-[18px] h-[18px] group-hover:fill-cream_white" />
               </div>
             </FloatingButton>
           </ul>

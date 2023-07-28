@@ -101,7 +101,7 @@ const HomeSection = ({ children }) => {
                 stiffness: 260,
                 damping: 40,
               }}
-              className="w-full h-screen absolute top-0 left-0 bg-blue_white "
+              className="w-full h-screen absolute top-0 left-0 bg-cream_bg "
             >
               <motion.img
                 initial={{ opacity: 0, scale: 0.5, x: "-50%", y: "-50%" }}

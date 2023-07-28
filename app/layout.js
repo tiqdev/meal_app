@@ -27,7 +27,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="tr">
-      <meta name="theme-color" content={"#008080"} id="theme-color-meta" />
+      <meta name="theme-color" content={"#291911"} id="theme-color-meta" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <title>Kur'an-ı Kerim Türkçe Meali</title>

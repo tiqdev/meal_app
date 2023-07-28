@@ -26,7 +26,7 @@ const ScrollLoader = () => {
 
   return (
     <motion.div
-      className="fixed bottom-0 left-0 h-[8px] bg-blue_soft dark:bg-blue_white z-[45]"
+      className="fixed bottom-0 left-0 h-[8px] bg-brown_soft dark:bg-cream_bg z-[45]"
       transition={{ ease: "linear", duration: 0 }}
       style={{ width: `${scrollProgress * 100}%` }}
       initial={{ width: 0 }}

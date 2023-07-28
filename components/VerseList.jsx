@@ -159,7 +159,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
         </div>
       )}
 
-      <div className="w-full h-[50px] flex flex-row justify-center items-center border-solid border-b-[1px]  border-blue_soft_border dark:border-blue_white_border px-[12px] gap-[10px]">
+      <div className="w-full h-[50px] flex flex-row justify-center items-center border-solid border-b-[1px]  border-brown_soft_border dark:border-cream_white_border px-[12px] gap-[10px]">
         <div className="w-[24px]">
           <BiSearchAlt2 className="w-[20px] h-[20px]" />
         </div>
@@ -218,7 +218,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                 key={index}
                 className={
                   isActive
-                    ? "verse_item bg-blue_soft text-blue_white dark:bg-blue_white dark:text-blue_soft"
+                    ? "verse_item bg-brown_soft text-cream_white dark:bg-cream_bg dark:text-brown_soft"
                     : "verse_item"
                 }
                 id={verse.verse_number}
@@ -232,14 +232,14 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                       highlightStyle={
                         theme === "dark"
                           ? {
-                              backgroundColor: "#ecfdf5",
+                              backgroundColor: "#F7F3EE",
                               padding: 1,
-                              color: "#008080",
+                              color: "#291911",
                             }
                           : {
-                              backgroundColor: "#008080",
+                              backgroundColor: "#291911",
                               padding: 1,
-                              color: "#ecfdf5",
+                              color: "#F7F3EE",
                             }
                       }
                       autoEscape={false}
@@ -274,8 +274,8 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                     <BiSolidPin
                       className={
                         isActive
-                          ? "fill-blue_white dark:fill-blue_soft group-hover:fill-blue_soft dark:group-hover:fill-[#ffffff]"
-                          : "fill-blue_soft dark:fill-blue_white group-hover:fill-[#ffffff] dark:group-hover:fill-blue_soft"
+                          ? "fill-cream_white dark:fill-brown_soft group-hover:fill-brown_soft dark:group-hover:fill-[#ffffff]"
+                          : "fill-brown_soft dark:fill-cream_white group-hover:fill-[#ffffff] dark:group-hover:fill-brown_soft"
                       }
                     />
                   </motion.div>
@@ -300,8 +300,8 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                     <BiSolidCopy
                       className={
                         isActive
-                          ? "fill-blue_white dark:fill-blue_soft group-hover:fill-blue_soft dark:group-hover:fill-[#ffffff]"
-                          : "fill-blue_soft dark:fill-blue_white group-hover:fill-[#ffffff] dark:group-hover:fill-blue_soft"
+                          ? "fill-cream_white dark:fill-brown_soft group-hover:fill-brown_soft dark:group-hover:fill-[#ffffff]"
+                          : "fill-brown_soft dark:fill-cream_white group-hover:fill-[#ffffff] dark:group-hover:fill-brown_soft"
                       }
                     />
                   </motion.div>
@@ -329,8 +329,8 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                       <BiSearchAlt2
                         className={
                           isActive
-                            ? "fill-blue_white dark:fill-blue_soft group-hover:fill-blue_soft dark:group-hover:fill-[#ffffff]"
-                            : "fill-blue_soft dark:fill-blue_white group-hover:fill-[#ffffff] dark:group-hover:fill-blue_soft"
+                            ? "fill-cream_white dark:fill-brown_soft group-hover:fill-brown_soft dark:group-hover:fill-[#ffffff]"
+                            : "fill-brown_soft dark:fill-cream_white group-hover:fill-[#ffffff] dark:group-hover:fill-brown_soft"
                         }
                       />
                     </motion.div>
@@ -370,16 +370,16 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                         <BsBookmarkFill
                           className={
                             isActive
-                              ? "fill-blue_white dark:fill-blue_soft group-hover:fill-blue_soft dark:group-hover:fill-[#ffffff]"
-                              : "fill-blue_soft dark:fill-blue_white group-hover:fill-[#ffffff] dark:group-hover:fill-blue_soft"
+                              ? "fill-cream_white dark:fill-brown_soft group-hover:fill-brown_soft dark:group-hover:fill-[#ffffff]"
+                              : "fill-brown_soft dark:fill-cream_white group-hover:fill-[#ffffff] dark:group-hover:fill-brown_soft"
                           }
                         />
                       ) : (
                         <BsBookmark
                           className={
                             isActive
-                              ? "fill-blue_white dark:fill-blue_soft group-hover:fill-blue_soft dark:group-hover:fill-[#ffffff]"
-                              : "fill-blue_soft dark:fill-blue_white group-hover:fill-[#ffffff] dark:group-hover:fill-blue_soft"
+                              ? "fill-cream_white dark:fill-brown_soft group-hover:fill-brown_soft dark:group-hover:fill-[#ffffff]"
+                              : "fill-brown_soft dark:fill-cream_white group-hover:fill-[#ffffff] dark:group-hover:fill-brown_soft"
                           }
                         />
                       )}
@@ -405,7 +405,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
           >
             <svg
               aria-hidden="true"
-              className="inline w-12 h-12 mr-2 text-blue_soft_border animate-spin dark:text-blue_white_border fill-blue_soft dark:fill-blue_white"
+              className="inline w-12 h-12 mr-2 text-brown_soft_border animate-spin dark:text-cream_white_border fill-brown_soft dark:fill-cream_white"
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

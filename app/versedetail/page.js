@@ -59,9 +59,9 @@ const SettingsPage = () => {
             setSelectedType("arabic");
           }
         }}
-        className=" my-[10px] flex items-center rounded-[12px] bg-blue_soft_border  dark:bg-blue_white_border bg-opacity-20 p-[6px] cursor-pointer hover:bg-blue_soft dark:hover:bg-blue_white  px-[12px] py-[4px] w-min ml-auto mr-[10px] "
+        className=" my-[10px] flex items-center rounded-[12px] bg-brown_soft_border  dark:bg-cream_white_border bg-opacity-20 p-[6px] cursor-pointer hover:bg-brown_soft dark:hover:bg-cream_bg  px-[12px] py-[4px] w-min ml-auto mr-[10px] "
       >
-        <span className="text-[14px] font-[500] text-blue_soft dark:text-blue_white dark:hover:text-blue_soft hover:text-blue_white">
+        <span className="text-[14px] font-[500] text-brown_soft dark:text-cream_white dark:hover:text-brown_soft hover:text-cream_white">
           {selectedType === "arabic" ? "Arap" : "Latin"}
         </span>
       </div>
@@ -90,7 +90,7 @@ const SettingsPage = () => {
         </div>
       )}
 
-      <hr className="my-[20px] border-solid border-b-[1px] border-blue_soft_border dark:border-blue_white_border" />
+      <hr className="my-[20px] border-solid border-b-[1px] border-brown_soft_border dark:border-cream_white_border" />
 
       <ul className="mt-[20px]">
         {details.map((item, index) => (

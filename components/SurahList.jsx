@@ -70,7 +70,7 @@ const SurahList = () => {
       <div className="flex flex-col gap-[20px] mt-[10px]">
         <h1 className="title">Sureler</h1>
 
-        <div className="w-full h-[50px] flex flex-row justify-center items-center border-solid border-b-[1px]  border-blue_soft_border dark:border-blue_white_border px-[12px] gap-[10px]">
+        <div className="w-full h-[50px] flex flex-row justify-center items-center border-solid border-b-[1px]  border-brown_soft_border dark:border-cream_white_border px-[12px] gap-[10px]">
           <div className="w-[24px]">
             <BiSearch className="w-[20px] h-[20px]" />
           </div>
@@ -105,7 +105,7 @@ const SurahList = () => {
                   className={
                     "surah_item " +
                     (savedSurah == surah.id
-                      ? "bg-blue_soft text-blue_white dark:bg-blue_white dark:text-blue_soft "
+                      ? "bg-brown_soft text-cream_white dark:bg-cream_bg dark:text-brown_soft "
                       : "")
                   }
                   onClick={() => {
@@ -136,7 +136,7 @@ const SurahList = () => {
             >
               <svg
                 aria-hidden="true"
-                className="inline w-12 h-12 mr-2 text-blue_soft_border animate-spin dark:text-blue_white_border fill-blue_soft dark:fill-blue_white"
+                className="inline w-12 h-12 mr-2 text-brown_soft_border animate-spin dark:text-cream_white_border fill-brown_soft dark:fill-cream_white"
                 viewBox="0 0 100 101"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

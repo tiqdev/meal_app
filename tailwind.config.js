@@ -23,23 +23,25 @@ module.exports = {
 
       backgroundImage: {
         overlay_pattern_dark_bottom:
-          "linear-gradient(to bottom, transparent, #008080 80%)",
+          "linear-gradient(to bottom, transparent, #291911 80%)",
         overlay_pattern_light_bottom:
-          "linear-gradient(to bottom, transparent, #ecfdf5 80%)",
+          "linear-gradient(to bottom, transparent, #F7F3EE 80%)",
         overlay_pattern_dark_top:
-          "linear-gradient(to top, transparent, #008080 80%)",
+          "linear-gradient(to top, transparent, #291911 80%)",
         overlay_pattern_light_top:
-          "linear-gradient(to top, transparent, #ecfdf5 80%)",
+          "linear-gradient(to top, transparent, #F7F3EE 80%)",
       },
 
       colors: {
         cream: "#fefae0",
         soft_green: "#606c38",
         dark_green: "#283618",
-        blue_white: "#ecfdf5",
-        blue_soft: "#008080",
-        blue_soft_border: "rgba(0, 128, 128,0.2)",
-        blue_white_border: "rgba(236, 253, 245,0.2)",
+
+        cream_bg: "#F7F3EE",
+        cream_white: "#F7F3EE",
+        brown_soft: "#291911",
+        brown_soft_border: "rgba(43, 26, 18,0.2)",
+        cream_white_border: "rgba(247, 243, 238,0.2)",
         orange: "#dda15e",
         floating_bg: "hsla(0,0%,100%,.88)",
         floating_icon_border: "rgba(0,0,0,.12)",
