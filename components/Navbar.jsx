@@ -92,7 +92,7 @@ const Navbar = () => {
 
       <Link
         href="/"
-        className="w-[100px] h-[100px] absolute -top-[40px] left-1/2 -translate-x-1/2 "
+        className="w-[110px] h-[110px] absolute -top-[40px] left-1/2 -translate-x-1/2 rotate-[45deg]"
       >
         <img
           src="/logo.svg"

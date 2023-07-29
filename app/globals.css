@@ -371,7 +371,20 @@ table {
 a {
   text-decoration: none;
   color: inherit;
+  
 }
+
+/* Mavi vurguyu kaldırma */
+a {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a img {
+  border: 0; /* Görsel çevresindeki kenarlığı kaldırır */
+  -webkit-tap-highlight-color: transparent;
+}
+
 
 body {
   max-width: 1200px;
