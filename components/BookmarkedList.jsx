@@ -3,11 +3,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import _ from "lodash";
-import { BsBookmarkFill } from "react-icons/bs";
+import { BiSolidBookmark, BiSolidCopy } from "react-icons/bi";
 import { isFav, removeFav } from "@/utils/localStorageManager";
 import { setBookMarkedVerses } from "@/app/redux/slice/meal";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { copyToClipboard } from "@/utils/clipboard";
 
 const BookmarksList = () => {
   const dispatch = useDispatch();
@@ -39,6 +40,30 @@ const BookmarksList = () => {
                 whileTap={{
                   scale: 0.8,
                 }}
+                className="svg_container group "
+                onClick={() => {
+                  copyToClipboard(
+                    item.surah_name +
+                      " " +
+                      item.verse_id +
+                      ". Ayet:  " +
+                      item.verse,
+                    item.surah_name + " " + item.verse_id + ". Ayet kopyalandı."
+                  );
+                }}
+              >
+                <BiSolidCopy
+                  className={
+                    "fill-brown_soft dark:fill-cream_white group-hover:fill-[#ffffff] dark:group-hover:fill-brown_soft"
+                  }
+                />
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{
+                  scale: 0.8,
+                }}
                 className="svg_container group"
                 onClick={() => {
                   let _bookmarkedVerses = [...bookmarkedVerses];
@@ -59,7 +84,7 @@ const BookmarksList = () => {
                   }
                 }}
               >
-                <BsBookmarkFill className="fill-brown_soft dark:fill-cream_white group-hover:fill-[#ffffff] dark:group-hover:fill-brown_soft" />
+                <BiSolidBookmark className="fill-brown_soft dark:fill-cream_white group-hover:fill-[#ffffff] dark:group-hover:fill-brown_soft" />
               </motion.div>
             </div>
           </div>

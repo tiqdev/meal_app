@@ -1,18 +1,18 @@
 "use client";
-
 import { copyToClipboard } from "@/utils/clipboard";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { motion } from "framer-motion";
 
-import { BiSolidCopy, BiSolidPin, BiSearchAlt2 } from "react-icons/bi";
-
 import {
-  BsFillCaretRightFill,
-  BsFillCaretLeftFill,
-  BsBookmark,
-  BsBookmarkFill,
-} from "react-icons/bs";
+  BiSolidCopy,
+  BiSolidPin,
+  BiSearchAlt2,
+  BiSolidBookmark,
+  BiBookmark,
+} from "react-icons/bi";
+
+import { BsFillCaretRightFill, BsFillCaretLeftFill } from "react-icons/bs";
 
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,17 +25,8 @@ import {
 } from "@/app/redux/slice/meal";
 import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import { BiSearch } from "react-icons/bi";
 import Highlighter from "react-highlight-words";
-import { FaInfo } from "react-icons/fa";
-import {
-  addFav,
-  clearFavList,
-  getFavCount,
-  getFavList,
-  isFav,
-  removeFav,
-} from "@/utils/localStorageManager";
+import { addFav, isFav, removeFav } from "@/utils/localStorageManager";
 
 const VerseList = ({ surah = "Fatiha", surahId }) => {
   const [verses_data, setVersesData] = useState([]);
@@ -48,7 +39,6 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
   const author_id = useSelector((state) => state.meal.author_id);
   const bookmarkedVerses = useSelector((state) => state.meal.bookmarkedVerses);
 
-  const [canRender, setCanRender] = useState(false);
   const [searchActive, setSearchActive] = useState(false);
 
   const dispatch = useDispatch();
@@ -367,7 +357,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                       }}
                     >
                       {isBookmarked ? (
-                        <BsBookmarkFill
+                        <BiSolidBookmark
                           className={
                             isActive
                               ? "fill-cream_white dark:fill-brown_soft group-hover:fill-brown_soft dark:group-hover:fill-[#ffffff]"
@@ -375,7 +365,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
                           }
                         />
                       ) : (
-                        <BsBookmark
+                        <BiBookmark
                           className={
                             isActive
                               ? "fill-cream_white dark:fill-brown_soft group-hover:fill-brown_soft dark:group-hover:fill-[#ffffff]"
