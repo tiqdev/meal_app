@@ -36,3 +36,17 @@ export const getFavCount = () => {
 export const clearFavList = () => {
   localStorage.removeItem(fav_list_key);
 };
+
+export const exportFavList = () => {
+  const list = getFavList();
+  const dataStr =
+    "data:text/json;charset=utf-8," +
+    encodeURIComponent(JSON.stringify(list));
+  const downloadAnchorNode = document.createElement("a");
+  downloadAnchorNode.setAttribute("href", dataStr);
+  downloadAnchorNode.setAttribute("download", "fav_list.txt");
+  document.body.appendChild(downloadAnchorNode); // required for firefox
+  downloadAnchorNode.click();
+  downloadAnchorNode.remove();
+}
+

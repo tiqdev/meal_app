@@ -25,17 +25,9 @@ import {
 } from "@/app/redux/slice/meal";
 import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import { BiSearch } from "react-icons/bi";
 import Highlighter from "react-highlight-words";
-import { FaInfo } from "react-icons/fa";
-import {
-  addFav,
-  clearFavList,
-  getFavCount,
-  getFavList,
-  isFav,
-  removeFav,
-} from "@/utils/localStorageManager";
+
+import { addFav, isFav, removeFav } from "@/utils/localStorageManager";
 
 const VerseList = ({ surah = "Fatiha", surahId }) => {
   const [verses_data, setVersesData] = useState([]);
@@ -166,7 +158,7 @@ const VerseList = ({ surah = "Fatiha", surahId }) => {
 
         <input
           type="text"
-          placeholder="Kelime yada ayet numarası..."
+          placeholder="Kelime veya ayet numarası..."
           className="input_bar"
           onChange={searchHandle}
         />
