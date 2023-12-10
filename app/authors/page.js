@@ -7,7 +7,6 @@ export const getAuthors = async () => {
   const res = await fetch("https://api.acikkuran.com/authors", {
     revalidate: 1000,
   });
-  console.log(res, "res");
   return res.json();
 };
 
