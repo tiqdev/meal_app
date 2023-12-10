@@ -7,8 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   BiSolidPin,
   BiSolidCog,
+  BiSolidSun,
+  BiSolidMoon,
   BiSolidHome,
-  BiSolidBookmark,
 } from "react-icons/bi";
 
 import {
@@ -103,7 +104,7 @@ const Navbar = () => {
       <ul className="flex flex-row items-center justify-center gap-[12px]">
         <li>
           <Link href="/bookmarks">
-            <BiSolidBookmark className="w-[20px] h-[20px] " />
+            <BsBookmarkFill className="w-[20px] h-[20px] " />
           </Link>
         </li>
         <li>

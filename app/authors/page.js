@@ -4,9 +4,10 @@ import AuthorList from "@/components/AuthorList";
 export const getAuthors = async () => {
   //authors u çekmek için api ye istek atıyoruz
   //revalidate ile 1000 saniyede bir yeniden istek atıyoruz
-  const res = await fetch("https://kuranmeali.vercel.app/api/authors", {
+  const res = await fetch("https://api.acikkuran.com/authors", {
     revalidate: 1000,
   });
+  console.log(res, "res");
   return res.json();
 };
 

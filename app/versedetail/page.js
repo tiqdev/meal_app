@@ -4,8 +4,7 @@ import AnimatedContainer from "@/components/AnimatedContainer";
 
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Tippy from "@tippyjs/react";
-import "tippy.js/dist/tippy.css"; // optional
+
 
 const SettingsPage = () => {
   const [details, setDetails] = useState([]);
@@ -70,15 +69,15 @@ const SettingsPage = () => {
         <div className=" text-right arabic_text px-[10px] w-full max-w-[1200px] flex flex-row-reverse flex-wrap items-end justify-start gap-[16px]">
           {words.map((item, index) => (
             <span key={index}>
-              <Tippy content={item.turkish}>
-                <span
-                  id={`tooltip_${index}`}
-                  key={index}
-                  className="hover:text-orange"
-                >
-                  {item.arabic}
-                </span>
-              </Tippy>
+
+              <span
+                id={`tooltip_${index}`}
+                key={index}
+                className="hover:text-orange"
+              >
+                {item.arabic}
+              </span>
+
             </span>
           ))}
         </div>
