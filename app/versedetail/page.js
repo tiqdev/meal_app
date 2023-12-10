@@ -4,6 +4,8 @@ import AnimatedContainer from "@/components/AnimatedContainer";
 
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css"; // optional
 
 
 const SettingsPage = () => {
@@ -70,13 +72,15 @@ const SettingsPage = () => {
           {words.map((item, index) => (
             <span key={index}>
 
-              <span
-                id={`tooltip_${index}`}
-                key={index}
-                className="hover:text-orange"
-              >
-                {item.arabic}
-              </span>
+              <Tippy content={item.turkish}>
+                <span
+                  id={`tooltip_${index}`}
+                  key={index}
+                  className="hover:text-orange"
+                >
+                  {item.arabic}
+                </span>
+              </Tippy>
 
             </span>
           ))}
